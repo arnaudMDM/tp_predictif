@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="PredictifPU" transaction-type="RESOURCE_LOCAL">
+    <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+    <class>Modele.Client</class>
+    <class>Modele.Employe</class>
+    <class>Modele.Horoscope</class>
+    <class>Modele.Medium</class>
+    <class>Modele.Predictions.AmourPrediction</class>
+    <class>Modele.Predictions.Prediction</class>
+    <class>Modele.Predictions.SantePrediction</class>
+    <class>Modele.Predictions.TravailPrediction</class>
+    <class>Modele.SigneAstrologique</class>
+    <properties>
+      <property name="toplink.jdbc.user" value="plop"/>
+      <property name="toplink.jdbc.password" value="plop"/>
+      <property name="toplink.jdbc.url" value="jdbc:derby://localhost:1527/PredictifB331"/>
+      <property name="toplink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+    </properties>
+  </persistence-unit>
+</persistence>

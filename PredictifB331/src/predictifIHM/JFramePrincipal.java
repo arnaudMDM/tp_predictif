@@ -212,6 +212,11 @@ private List<Client> listeClients;
         });
 
         jButtonrRechercher.setText("Rechercher");
+        jButtonrRechercher.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonrRechercherMouseClicked(evt);
+            }
+        });
 
         jButtonModifier.setText("Modifier");
         jButtonModifier.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -229,7 +234,7 @@ private List<Client> listeClients;
 
         jPanelInfoClient.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabelTitreDétails.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabelTitreDétails.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelTitreDétails.setText("Détails du client sélectionné");
 
         jLabelNumero.setText("Numéro:");
@@ -332,12 +337,6 @@ private List<Client> listeClients;
                             .addComponent(jLabelEmail)
                             .addContainerGap())
                         .addGroup(jPanelInfoClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelInfoClientLayout.createSequentialGroup()
-                                .addComponent(jLabelTel)
-                                .addContainerGap())
-                            .addGroup(jPanelInfoClientLayout.createSequentialGroup()
-                                .addComponent(jLabelDateNaissance)
-                                .addContainerGap())
                             .addGroup(jPanelInfoClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanelInfoClientLayout.createSequentialGroup()
                                     .addComponent(jLabelNumero)
@@ -366,9 +365,7 @@ private List<Client> listeClients;
                                                 .addComponent(jTextFieldNom)
                                                 .addComponent(jTextFieldPrenom)
                                                 .addComponent(jTextFieldDateNaissance, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInfoClientLayout.createSequentialGroup()
-                                                    .addComponent(jComboBoxReference, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                                .addComponent(jComboBoxReference, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                         .addGroup(jPanelInfoClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
@@ -384,7 +381,12 @@ private List<Client> listeClients;
                                                 .addComponent(jButton2))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                                             .addComponent(jTextAreaFavoris, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(49, 49, 49)))))))
+                                    .addGap(49, 49, 49)))
+                            .addGroup(jPanelInfoClientLayout.createSequentialGroup()
+                                .addGroup(jPanelInfoClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelTel)
+                                    .addComponent(jLabelDateNaissance))
+                                .addContainerGap())))))
             .addGroup(jPanelInfoClientLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelErreur)
@@ -575,7 +577,7 @@ private List<Client> listeClients;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelInfoClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(56, 56, 56))
         );
 
@@ -702,6 +704,24 @@ private List<Client> listeClients;
 
 
     }//GEN-LAST:event_jButtonValierMouseClicked
+
+    private void jButtonrRechercherMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonrRechercherMouseClicked
+        // TODO add your handling code here:
+        List<Client> temp = service.getAllClients();
+        listeClients.clear();
+        for(Client c : temp)
+        {
+            if(c.getNom().equalsIgnoreCase(jTextFieldRecherche.getText())
+                    || c.getPrenom().equalsIgnoreCase(jTextFieldRecherche.getText())
+                    || String.valueOf(c.getNumClient()).equalsIgnoreCase(jTextFieldRecherche.getText())
+                    || jTextFieldRecherche.getText().equals(""))
+            {
+                listeClients.add(c);
+            }
+        }
+        initialiserChamps();
+        jTableClient.setRowSelectionInterval(0, 0);
+    }//GEN-LAST:event_jButtonrRechercherMouseClicked
 
     private GregorianCalendar NewGregorianCalendar(String date) throws Exception
     {

@@ -67,7 +67,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jPanelInfoClient" max="32767" attributes="1"/>
-                  <Component id="jPanel1" alignment="0" pref="547" max="32767" attributes="1"/>
+                  <Component id="jPanel1" alignment="0" max="32767" attributes="1"/>
               </Group>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
           </Group>
@@ -89,6 +89,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Rechercher"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonrRechercherMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonModifier">
       <Properties>
@@ -129,14 +132,6 @@
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelTel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelDateNaissance" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabelNumero" min="-2" max="-2" attributes="0"/>
@@ -171,10 +166,7 @@
                                                   <Component id="jTextFieldNom" alignment="0" max="32767" attributes="1"/>
                                                   <Component id="jTextFieldPrenom" alignment="0" max="32767" attributes="1"/>
                                                   <Component id="jTextFieldDateNaissance" alignment="0" pref="84" max="32767" attributes="1"/>
-                                                  <Group type="102" alignment="1" attributes="1">
-                                                      <Component id="jComboBoxReference" max="32767" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="jComboBoxReference" alignment="1" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
@@ -199,6 +191,13 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelTel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelDateNaissance" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>

@@ -27,7 +27,6 @@ private Client client;
         initComponents();
         this.service = service;
         this.client = client;
-        System.out.println(this.client.getNom());
     }
 
     /** This method is called from within the constructor to

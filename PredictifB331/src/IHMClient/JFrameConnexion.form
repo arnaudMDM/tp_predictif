@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelErreur" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jButtonConnection" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPasswordFieldMotdepasse" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLabelMotdePasse" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelNuméro" alignment="0" pref="107" max="32767" attributes="1"/>
+                      <Component id="jTextFieldNumero" alignment="0" max="32767" attributes="1"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="147" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+              <Component id="jLabelNuméro" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jTextFieldNumero" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="jLabelMotdePasse" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jPasswordFieldMotdepasse" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jButtonConnection" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabelErreur" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="81" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabelNum&#xe9;ro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Num&#xe9;ro d&apos;employ&#xe9;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMotdePasse">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mot de passe"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jPasswordFieldMotdepasse">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonConnection">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Se connecter"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonConnectionMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumero">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNumeroActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelErreur">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Num&#xe9;ro ou mot de passe incorrect"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
